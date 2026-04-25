@@ -1,0 +1,104 @@
+---
+// Timeline.astro
+---
+
+<div class="timeline-container">
+  <h3 class="timeline-title"><span class="marker-highlight">Consensus</span>: Engagement Strategy</h3>
+  <div class="timeline">
+    <div class="timeline-item sharp-border uneven-clip-1 skew-left interactive-hover">
+      <div class="phase">Phase 1</div>
+      <h4>Listening Sessions</h4>
+      <p>Gathering feedback from Gowanus residents and local studio artists on traffic and congestion.</p>
+    </div>
+    <div class="timeline-item sharp-border uneven-clip-2 skew-right interactive-hover">
+      <div class="phase">Phase 2</div>
+      <h4>Design & Iteration</h4>
+      <p>Collaborative workshops to outline the 'Art Spine' route, balancing safety and aesthetics.</p>
+    </div>
+    <div class="timeline-item sharp-border uneven-clip-1 skew-left interactive-hover">
+      <div class="phase">Phase 3</div>
+      <h4>Pilot Program</h4>
+      <p>Temporary street closures and weekend art walks to test the impact of the spine.</p>
+    </div>
+    <div class="timeline-item sharp-border uneven-clip-2 skew-right interactive-hover">
+      <div class="phase">Phase 4</div>
+      <h4>Implementation</h4>
+      <p>Permanent zoning adjustments and streetscaping for the full Gowanus Art Spine.</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .timeline-container {
+    margin: 4rem 0;
+  }
+
+  .timeline-title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+  }
+
+  /* The Line */
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    width: var(--border-width);
+    background-color: var(--color-dark);
+    z-index: 0;
+  }
+
+  .timeline-item {
+    background-color: #fff;
+    padding: 1.5rem;
+    margin-left: 40px;
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+  }
+
+  .timeline-item:nth-child(even) {
+    align-self: flex-end;
+    margin-left: 0;
+    margin-right: 40px;
+  }
+
+  .phase {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: #fff;
+    font-family: var(--font-heading);
+    padding: 0.2rem 0.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-item h4 {
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-item p {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .timeline::before {
+      left: 20px;
+    }
+    .timeline-item:nth-child(even) {
+      align-self: flex-start;
+      margin-left: 40px;
+      margin-right: 0;
+    }
+  }
+</style>

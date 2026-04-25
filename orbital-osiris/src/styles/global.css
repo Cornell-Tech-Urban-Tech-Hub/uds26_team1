@@ -1,141 +1,133 @@
-/*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
+/* Gowanus Art Spine - Artsy & Gritty Aesthetic */
 
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
-	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
-	--box-shadow:
-		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-		0 16px 32px rgba(var(--gray), 33%);
+	--color-bg: #fdfaf6; /* slightly warm off-white */
+	--color-text: #1a1a1a;
+	--color-accent: #ff3366; /* Vibrant, marker-like pink/red */
+	--color-secondary: #00e5ff; /* Cyan marker */
+	--color-dark: #000000;
+	
+	--font-heading: 'Impact', 'Arial Black', sans-serif;
+	--font-body: 'Courier New', Courier, monospace;
+
+	--border-width: 4px;
+	--sharp-shadow: 8px 8px 0px var(--color-dark);
 }
+
+* {
+	box-sizing: border-box;
+	border-radius: 0 !important; /* Force sharp corners everywhere */
+}
+
 body {
-	font-family: var(--font-atkinson);
 	margin: 0;
 	padding: 0;
-	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
-	font-size: 20px;
-	line-height: 1.7;
+	background-color: var(--color-bg);
+	/* Subtle dot pattern for interesting background */
+	background-image: radial-gradient(#d0c8b8 1px, transparent 1px);
+	background-size: 20px 20px;
+	color: var(--color-text);
+	font-family: var(--font-body);
+	line-height: 1.6;
+	overflow-x: hidden;
 }
-main {
-	width: 720px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-heading);
+	text-transform: uppercase;
+	margin: 0 0 1rem 0;
+	line-height: 1.1;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
-	line-height: 1.2;
-}
+
 h1 {
-	font-size: 3.052em;
+	font-size: clamp(3rem, 8vw, 6rem);
+	letter-spacing: -0.05em;
+	color: var(--color-text);
+	text-shadow: 4px 4px 0px var(--color-accent);
 }
+
 h2 {
-	font-size: 2.441em;
+	font-size: clamp(2rem, 5vw, 4rem);
+	display: inline-block;
+	background-color: var(--color-dark);
+	color: var(--color-bg);
+	padding: 0.5rem 1rem;
+	transform: rotate(-2deg);
+	margin-bottom: 2rem;
 }
-h3 {
-	font-size: 1.953em;
-}
-h4 {
-	font-size: 1.563em;
-}
-h5 {
-	font-size: 1.25em;
-}
-strong,
-b {
-	font-weight: 700;
-}
-a {
-	color: var(--accent);
-}
-a:hover {
-	color: var(--accent);
-}
+
 p {
-	margin-bottom: 1em;
+	font-size: 1.125rem;
+	max-width: 65ch;
+	margin-bottom: 1.5rem;
 }
-.prose p {
-	margin-bottom: 2em;
+
+/* Utilities for Artsy Feel */
+.sharp-border {
+	border: var(--border-width) solid var(--color-dark);
+	box-shadow: var(--sharp-shadow);
 }
-textarea {
-	width: 100%;
-	font-size: 16px;
+
+.uneven-clip-1 {
+	clip-path: polygon(2% 0, 100% 3%, 98% 100%, 0 97%);
 }
-input {
-	font-size: 16px;
+
+.uneven-clip-2 {
+	clip-path: polygon(0 5%, 95% 0, 100% 95%, 5% 100%);
 }
-table {
-	width: 100%;
+
+.marker-highlight {
+	background: linear-gradient(104deg, transparent 0%, var(--color-secondary) 0%, var(--color-secondary) 100%);
+	padding: 0.2em 0.4em;
+	color: var(--color-dark);
+	font-weight: bold;
 }
+
+.skew-left {
+	transform: skewX(-5deg);
+}
+
+.skew-right {
+	transform: skewX(5deg);
+}
+
+/* Base Layout Containers */
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem;
+}
+
+.section {
+	padding: 6rem 0;
+	position: relative;
+}
+
 img {
 	max-width: 100%;
 	height: auto;
-	border-radius: 8px;
-}
-code {
-	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
-	border-radius: 2px;
-}
-pre {
-	padding: 1.5em;
-	border-radius: 8px;
-}
-pre > code {
-	all: unset;
-}
-blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0;
-	font-size: 1.333em;
-}
-hr {
-	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
-}
-@media (max-width: 720px) {
-	body {
-		font-size: 18px;
-	}
-	main {
-		padding: 1em;
-	}
+	border: var(--border-width) solid var(--color-dark);
+	box-shadow: var(--sharp-shadow);
 }
 
-.sr-only {
-	border: 0;
-	padding: 0;
-	margin: 0;
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-	clip: rect(1px 1px 1px 1px);
-	/* maybe deprecated but we need to support legacy browsers */
-	clip: rect(1px, 1px, 1px, 1px);
-	/* modern browsers, clip-path works inwards from each corner */
-	clip-path: inset(50%);
-	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
-	white-space: nowrap;
+/* Scroll Reveal Animations */
+.reveal {
+	opacity: 0;
+	transform: translateY(40px);
+	transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Hover Interaction Utilities */
+.interactive-hover {
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interactive-hover:hover {
+	transform: translate(-4px, -4px) !important;
+	box-shadow: 12px 12px 0px var(--color-accent) !important;
 }

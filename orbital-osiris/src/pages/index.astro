@@ -1,8 +1,11 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import ArtsySection from '../components/ArtsySection.astro';
+import InteractiveMap from '../components/InteractiveMap.astro';
+import Timeline from '../components/Timeline.astro';
+
+const SITE_TITLE = "The Gowanus Art Spine";
+const SITE_DESCRIPTION = "Transforming congestion into a thriving, creative community corridor.";
 ---
 
 <!doctype html>
@@ -11,39 +14,189 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<!-- HERO SECTION -->
+			<header class="hero container reveal">
+				<div class="hero-content sharp-border uneven-clip-2 skew-left interactive-hover">
+					<h1>The Gowanus Art Spine</h1>
+					<h2>From Congestion to Connection</h2>
+					<p>An urban intervention addressing gentrification and the displacement of local artists by connecting studios and anchors along a vibrant, community-focused path.</p>
+				</div>
+			</header>
+
+			<div class="container">
+				<!-- INSIGHTS -->
+				<div class="reveal">
+					<ArtsySection id="insights" className="skew-right">
+						<h3><span class="marker-highlight">Insights</span>: The Challenge</h3>
+						<div class="split-layout">
+							<div class="text-content">
+								<p>Gowanus is facing a critical turning point. New residential builds now command a 35% rent premium, creating a financial incentive for landlords to evict artists and convert historic warehouses into luxury spaces.</p>
+								<p>Artist studios are an "invisible" asset. Unlike retail storefronts, they don't fit the traditional Business Improvement District (BID) toolkit because they generate low foot-traffic. Every year during Open Studios, hundreds of artists voice fears of displacement and rezoning anxiety.</p>
+							</div>
+							<div class="image-grid">
+								<img src="/images/before-1.png" alt="Gowanus Congestion 1" />
+								<img src="/images/before-2.png" alt="Gowanus Congestion 2" />
+							</div>
+						</div>
+					</ArtsySection>
+				</div>
+
+				<!-- TRANSFORMATION -->
+				<div class="reveal">
+					<ArtsySection id="transformation">
+						<h3><span class="marker-highlight">Transformation</span>: The Intervention</h3>
+						<div class="split-layout reverse">
+							<div class="text-content">
+								<p>Our solution is the <strong>Gowanus Art Spine</strong>, funded by a new <strong>"Congestion Relief" Pricing</strong> model—but for gentrification.</p>
+								<p>As new residents move into luxury builds, they pay a one-time fee that goes directly towards building the Art Spine. This curbs gentrification claims and funds cultural preservation.</p>
+								<p>Unlike the High Line—which led to displacement and was heavily influenced by private donors—the Art Spine is a community-prioritized pathway designed to increase foot traffic to invisible artist studios without accelerating displacement.</p>
+							</div>
+							<div class="image-grid">
+								<img src="/images/after-1.png" alt="Art Spine Transformation 1" />
+								<img src="/images/after-2.png" alt="Art Spine Transformation 2" />
+							</div>
+						</div>
+					</ArtsySection>
+				</div>
+
+				<!-- PREDICTION (INTERACTIVE MAP) -->
+				<div id="prediction" class="reveal">
+					<InteractiveMap />
+				</div>
+
+				<!-- CONSENSUS (TIMELINE) -->
+				<div id="consensus" class="reveal">
+					<Timeline />
+				</div>
+			</div>
 		</main>
-		<Footer />
+
+		<footer class="site-footer reveal">
+			<div class="container">
+				<p><strong>The Gowanus Art Spine</strong> &mdash; UDS26 Team 1</p>
+			</div>
+		</footer>
+
+		<script>
+			// Intersection Observer for scroll animations
+			document.addEventListener("DOMContentLoaded", () => {
+				const reveals = document.querySelectorAll(".reveal");
+				
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add("active");
+							// Optional: Stop observing once revealed
+							// observer.unobserve(entry.target);
+						}
+					});
+				}, {
+					threshold: 0.1,
+					rootMargin: "0px 0px -50px 0px"
+				});
+
+				reveals.forEach(reveal => {
+					observer.observe(reveal);
+				});
+			});
+		</script>
 	</body>
 </html>
+
+<style>
+	.hero {
+		padding: 6rem 2rem 4rem 2rem;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+	}
+
+	.hero-content {
+		background-color: var(--color-dark);
+		color: var(--color-bg);
+		padding: 4rem;
+		max-width: 900px;
+	}
+
+	.hero-content h1 {
+		color: var(--color-bg);
+		text-shadow: 4px 4px 0px var(--color-secondary);
+	}
+
+	.hero-content h2 {
+		background-color: var(--color-accent);
+		color: var(--color-bg);
+		transform: rotate(2deg);
+	}
+
+	.hero-content p {
+		margin: 0 auto;
+		font-size: 1.25rem;
+		opacity: 0.9;
+	}
+
+	.split-layout {
+		display: flex;
+		gap: 3rem;
+		align-items: center;
+	}
+
+	.split-layout.reverse {
+		flex-direction: row-reverse;
+	}
+
+	.text-content {
+		flex: 1;
+	}
+
+	.image-grid {
+		flex: 1;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+		position: relative;
+	}
+
+	.image-grid img {
+		width: 100%;
+		aspect-ratio: 1;
+		object-fit: cover;
+		transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		z-index: 1;
+	}
+
+	.image-grid img:nth-child(2) {
+		transform: translateY(2rem) rotate(3deg);
+		z-index: 2;
+	}
+
+	.image-grid img:first-child {
+		transform: rotate(-2deg);
+	}
+
+	.image-grid img:hover {
+		transform: scale(1.08) rotate(0deg);
+		z-index: 10;
+		box-shadow: 12px 12px 0px var(--color-secondary);
+	}
+
+	.site-footer {
+		background-color: var(--color-dark);
+		color: var(--color-bg);
+		text-align: center;
+		padding: 2rem 0;
+		margin-top: 6rem;
+		border-top: var(--border-width) solid var(--color-accent);
+	}
+
+	@media (max-width: 768px) {
+		.split-layout, .split-layout.reverse {
+			flex-direction: column;
+		}
+		
+		.hero-content {
+			padding: 2rem;
+		}
+	}
+</style>

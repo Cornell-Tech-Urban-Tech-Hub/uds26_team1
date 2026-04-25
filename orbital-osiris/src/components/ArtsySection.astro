@@ -1,0 +1,37 @@
+---
+interface Props {
+  className?: string;
+  id?: string;
+}
+
+const { className = '', id } = Astro.props;
+---
+
+<section id={id} class={`artsy-section ${className}`}>
+  <div class="artsy-content sharp-border uneven-clip-1 interactive-hover">
+    <slot />
+  </div>
+</section>
+
+<style>
+  .artsy-section {
+    padding: 2rem 0;
+    margin-bottom: 4rem;
+  }
+  
+  .artsy-content {
+    background-color: #ffffff;
+    padding: 3rem;
+    position: relative;
+  }
+
+  /* Rotate even sections slightly differently for a messy look */
+  .artsy-section:nth-child(even) .artsy-content {
+    transform: rotate(1deg);
+    clip-path: polygon(0 2%, 98% 0, 100% 98%, 2% 100%);
+  }
+
+  .artsy-section:nth-child(odd) .artsy-content {
+    transform: rotate(-1deg);
+  }
+</style>

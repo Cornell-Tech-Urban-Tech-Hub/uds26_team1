@@ -1,0 +1,494 @@
+Gowanus Arts Spine
+Max Corkran, Michelle Hui, Nina Mantegna, Atmika Pai, Gabriela Yaulli 
+Urban Design //Street Knowledge
+SP26
+AGENDA
+Initial Insights
+THE VISION COMPANY NAME
+Transformation
+Prediction
+Consensus
+Website05
+04
+03
+02
+01
+01 Insights
+Tensions between old and new, 
+luxury vs historic/creative.
+INSIGHTS
+5
+Source Quarter
+Factories were abandoned, artists 
+flocked to cheap vast warehouses 
+for studios and co-living. 
+Artists flock to 
+Gowanus
+Post-World War 
+2
+Month Year
+Arts Gowanus Open House
+Historical factory grounds converted 
+to arts space
+Nonprofit Spaceworks renting to artists in 
+Gowanus since 2015; Headquarter to Arts 
+Gowanus
+Dozens of Gowanus artists to lose 
+studio space as non-profit shutters
+Evicted during covid by landlord
+Now a Luxury Co-working Space
+Active Art!
+● Hey Clay Pottery Studio
+○ Emphasis on shared resources and 
+knowledge
+● Textile Arts Center
+○ Exhibits, summer camps, and galleries
+● Theater Mitu (Mitu580)
+○ Combination of niche and common 
+plays, small business and research
+● ZeroSpace
+○ Modern, digital and live theater
+INSIGHTS
+New residential builds in 
+Gowanus now command a 35% 
+rent premium over older 
+buildings in the same 
+neighborhood, creating a 
+significant financial incentive for 
+landlords of older factory 
+buildings to favor redevelopment 
+over artist tenancies.
+Source
+35% 
+Rent Premium
+Looking South on Union Street Bridge, 2017 v. 2024
+10
+Who seems welcomed here? Who 
+might feel excluded?
+Open Studios & 
+Rezoning Anxiety
+- Every year, 300 to 500 artists open their 
+warehouses, factory studios, and creative 
+spaces to thousands of visitors. 
+- Artists voice displacement fears: rising 
+rents, building sales, evictions
+- Open Studios used as platform for 
+advocacy & protest
+INSIGHTS
+Artist Studios: An "Invisible" BID Asset
+What BIDs Are Built to Support
+● Storefronts & retail corridors
+● Property owners (who pay assessments)
+● "Front-facing" businesses (cafés, bars, restaurants)
+Where Artist Studios Sit
+● Non-retail, light-industrial space (back lots, upper floors)
+● Tenants, not property owners
+● Low foot-traffic generation
+● Not highly visible to casual visitors
+BIDs excel at managing the public realm and supporting visible 
+commercial activity but… artist studios are a cultural asset that doesn't fit 
+the traditional BID toolkit
+INSIGHTS
+
+
+
+02 Transformation
+Create solutions that preserve the 
+artists community in 
+Gowanus 
+TRANSFORMATION
+Basket of Solutions
+Gowanus 
+Arts Spine
+À la High Line, Hudson 
+Yard
+New 
+Neighbour 
+“Congestion 
+Relief” Pricing 
+À la NYC Congestion 
+Pricing, but for 
+gentrification
+Art Galleries as 
+Historic Sites
+Designating old, 
+industrial art-galleries as 
+historic sites (à la 
+Powerhouse Arts)
+Paid Art 
+Volunteering 
+Hours
+Paid “art work” hours to 
+encourage volunteering 
+& participation in art 
+galleries
+Solution 1 Solution 2 Solution 3 Solution 4
+TRANSFORMATION
+We interrogate these 2 ideas!
+“Gowanus Arts 
+Spine” 
+a.k.a 
+High Line-style 
+Gowanus Art Gallery Walkway
+Place-Making: greater than sum of its parts
+Cultural Preservation: shielding from gentrification
+Wayfinding: increase foot traffic
+TRANSFORMATION
+
+“Who is it built for?”
+“Displacement?”
+“Halo Effect?” 
+
+$200 M
+Total
+$86 M
+Phase 1
+How was the Highline Funded?
+High Line Costs  “And the High Line, while a boon for the 
+city, is an amenity that is little used by 
+low-income residents and people of color.”
+NYT
+$20MBrookfield 
+Properties
+Friends of the 
+Highline
+Other Private Donors
+Von Furstenburgs
+$100 M
+$20M
+$35 M
+$152 M
+Phase 1+2
+TRANSFORMATION
+High-end development and tourism led to displacement of small galleries.
+Private donors were given priority when it came to design and placement of the highline
+
+New Neighbour 
+“Congestion Relief” 
+Price
+As people move in, they pay an initial, 
+one-time fee. That money goes towards 
+building Gowanus Arts Spine.
+Hypothesis: 1-time fee does not affect new 
+residents
+ Curbs NIMBY & Gentrification 
+Claims 
+TRANSFORMATION
+03 Prediction
+PREDICTION
+5 SCENARIOS FOR THE ART SPINE
+What if there was no 
+art spine, acting as 
+our baseline or 
+control group?
+E0
+Art Spine: 
+shortened paths 
+and how that affects 
+footprint?
+E1
+Art Spine: More 
+accurate and long 
+walking paths and 
+how that affects 
+footprint?
+E2
+Infrastructure/Awa
+reness score: If we 
+had a higher 
+“congestion relief” 
+price, how would the 
+higher spend on the 
+spine change 
+people’s behavior? 
+E3 Does including a 
+subway station 
+affect Art Spine 
+adoption and 
+footprint? 
+E4
+IMPACT & FEASIBILITY OF ART SPINE, FUNDED BY CONGESTION RELIEF PRICING
+PREDICTION
+4 SCENARIOS - SIMULATION
+Does the Arts Spine intervention actually increase studio visits 
+compared to no intervention? And what conditions determine how 
+well it works?
+Baseline vs 
+Intervention
+No spine: pedestrians walk 
+randomly through Gowanus 
+With spine: current 
+behavior, pedestrians follow 
+the route
+Studio 
+Density / 
+Placement
+What if studios are 
+clustered vs. spread along 
+the spine / BID?
+Signage / 
+wayfinding 
+awareness
+How would higher spend 
+on the spine change 
+people’s behavior?
+Pedestrian 
+origin points
+How do the entry points 
+to Gowanus affect the Art 
+Spine adoption and 
+footprint?
+
+Escenario 1
+ 
+ Baseline vs Intervention
+Hypothesis: A curated path turns 
+accidental discovery into intentional 
+engagement.
+From our simulation: 55 vs. 40 
+studio visits at cycle 350 (38% 
+increase.)
+Finding: Even under conservative 
+assumptions, the Arts Spine 
+generates 38% more studio visits 
+than no intervention.
+Finding Even under conservative 
+assumptions, the Arts Spine generates 38% 
+more studio visits than no intervention.
+PREDICTION
+Escenario 2
+Studio 
+Density / Placement
+Hypothesis:
+A longer spine reaches more studios 
+but may dilute engagement. A 
+shorter, denser route could drive 
+deeper visits within a cluster.
+Simulation Finding: The shorter 
+spine still drives significantly more 
+visits than the baseline. Starting 
+small, measuring impact, and 
+expand later may be the smarter path 
+forward.
+PREDICTION
+Escenario 3
+Hypothesis:
+Better wayfinding and signage 
+investment increases # of pedestrians 
+who actively engage with the spine. 
+higher spend → + awareness → + 
+visits
+Simulation Finding: 
+Adjusting awareness from low to high 
+produces a visible increase in active 
+pedestrian flow
+- Stakeholders have a tunable lever 
+to model different investment 
+scenarios
+Signage / wayfinding 
+awareness
+Source of Hypothesis: Wayfinding Signage and Walking Perception in Urban Environments: A Human Factors and Ergonomics Framework Based on a Systematic Review
+PREDICTION
+Escenario 4: Art Spine + Footprint
+ 
+ Pedestrian origin points
+Hypothesis:
+Commuters from the subway stations 
+will increase foot traffic and 
+engagement of the art spine
+Simulation Finding: 
+- Blue line indicates the number 
+of unique commuters entering 
+the area, eventually plateaus 
++/- a negligible number each 
+week
+- Pink line shows how the 
+commuters over time engage 
+with the art spine
+Shows a pragmatic but tangible 
+amount of foot traffic the art spine 
+will continue to receive.
+PREDICTION
+Addtl Takeaways/Back of the Napkin Stats
+Over 5,300 expected incoming units were filed since the 2021 rezoning (The Empire State Development (ESD) 
+Gowanus Neighborhood Mixed-Income Housing Development Program )
+Census estimates 2.3 people per household in NYC (Census)
+Therefore, 12,000 new renters expected to be in the area
+One-time cost of $200/person ~ 2.5 million dollars towards the program 
+PREDICTION
+04 Consensus
+CONSENSUS
+Public Engagement Strategy
+Phase 2
+Route 
+Identification 
+& Iteration
+Phase 1
+Listening 
+Sessions
+Phase 3
+Piloting & 
+Testing
+Phase 4
+Implement
+CONSENSUS
+Public Engagement Strategy
+Phase 2
+Route 
+Identification 
+& Iteration
+Phase 1
+Listening 
+Sessions
+Phase 3
+Piloting & 
+Testing
+Phase 4
+Implement
+Host listening sessions in local public spaces 
+that are artist-centric 
+Deploy a community-led survey during Open 
+Studios event
+● QR Code
+● Promotion on local Gowanus-specific social 
+media accounts
+Phase 1: Listening Sessions
+CONSENSUS
+CONSENSUS
+Public Engagement Strategy
+Phase 2
+Route 
+Identification 
+& Iteration
+Phase 1
+Listening 
+Sessions
+Phase 3
+Piloting & 
+Testing
+Phase 4
+Implement
+Phase 2: Route Identification and Iteration
+Work with local artists to propose the physical route, 
+anchors, and aesthetic 
+Hold a public design competition
+○ Open submissions for art installations and 
+design
+○ Community members vote on which design 
+they prefer 
+CONSENSUS
+CONSENSUS
+Public Engagement Strategy
+Phase 2
+Route 
+Identification 
+& Iteration
+Phase 1
+Listening 
+Sessions
+Phase 3
+Piloting & 
+Testing
+Phase 4
+Implement
+Phase 3: Piloting and Testing
+Launch a one-season pilot walk, marketed as almost an extended open studios 
+Include printed maps, digital directory 
+Document community response, make changes as needed
+CONSENSUS
+CONSENSUS
+Public Engagement Strategy
+Phase 2
+Route 
+Identification 
+& Iteration
+Phase 1
+Listening 
+Sessions
+Phase 3
+Piloting & 
+Testing
+Phase 4
+Implement
+Phase 4: Implement
+Use pilot data to negotiate permanent funding commitments from the city, developers, and 
+the BID
+Rotating artist commission program to continue to keep the walk relevant and vibrant
+Congestion pricing will operate like a TIF (Tax Increment Financing method) to get 
+implementation moving immediately
+CONSENSUS
+CONSENSUS
+Implementation Timeline
+Listening Sessions Design
+Pilot Implementation
+LISTENING
+SESSIONS
+Months 1–4
+Key activities
+· Open community sessions
+· Artist-led surveys
+Stakeholders
+Arts GowanusHosts & facilitates sessions
+NYCHA Tenants Assoc.Lead voice on equity
+DESIGN
+Months 5–9
+Key activities
+· 2-day design competition
+· Route + installation proposals
+· Public comment (3 wks)
+Stakeholders
+Artist Advisory Committee
+Veto on curatorial direction
+Powerhouse Arts (or similar)
+Fabrication & site review
+PILOT
+Months 9–12
+Key activities
+· Launch at Open Studios (Oct.)
+· Attendance, survey, & subway  
+data· Press & documentation
+Stakeholders
+Arts GowanusProgramming + artist liaison
+New ResidentsInvited as participants
+IMPLEMENTATION
+Year 2 onward
+Key activities
+· Rotating artist commissions
+· Active Infrastructure development 
++ construction
+Stakeholders
+BID (formed)Funds coordination + maintenance
+Artist Advisory CommitteeOngoing curatorial control
+· Funding program approved by city 
+(TIF-style funding)
+CONSENSUS
+Highline: What Went Wrong
+Private donors given priority for design and 
+placement 
+Equity considerations occurred only after it was 
+built
+Site identification led to industrial ruin 
+No diverse community partnerships formed
+“Halo effect” on local property
+CONSENSUS
+Sources: Bloomberg, Eco-gentrification and who benefits from urban green amenities: NYC’s 
+high Line
+
+Highline: Gowanus Changes
+Private donors given priority for design and 
+placement-design will be community prioritized 
+Equity considerations occurred only after it was 
+built-equity considered before development
+Site identification led to industrial ruin-will be built 
+to be integrated into the community 
+No diverse community partnerships formed 
+-community partnerships & trusted community orgs 
+will assist with development
+“Halo effect” on local property-new property 
+renters/owners will see brunt of halo effect
+CONSENSUS
+
+
+
+
+THANK YOU

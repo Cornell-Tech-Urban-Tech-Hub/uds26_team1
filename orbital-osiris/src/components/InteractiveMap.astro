@@ -1,0 +1,378 @@
+---
+// InteractiveMap.astro
+---
+
+<div class="map-container sharp-border interactive-hover">
+  <div class="map-header">
+    <h3><span class="marker-highlight">Prediction</span>: The Art Spine & Congestion Relief</h3>
+    <div class="map-controls">
+      <button class="map-btn active" data-target="path">The Path</button>
+      <button class="map-btn" data-target="sim">Simulation Data</button>
+      <button class="map-btn" data-target="congestion">Congestion Relief</button>
+      <button class="map-btn" data-target="property">Property Value</button>
+    </div>
+  </div>
+
+  <div class="map-display">
+    <div id="map-path" class="map-layer interactive-path-layer active">
+      <div class="path-legend sharp-border interactive-hover">
+        <h4>Art Spine Anchors</h4>
+        <div class="legend-item">
+          <span class="color-swatch" style="background-color: #fceb55;"></span>
+          <div class="legend-text">
+            <strong>Hey Clay Pottery Studio</strong>
+            <p>Emphasis on shared resources and knowledge</p>
+          </div>
+        </div>
+        <div class="legend-item">
+          <span class="color-swatch" style="background-color: #7d4cf6;"></span>
+          <div class="legend-text">
+            <strong>Textile Arts Center</strong>
+            <p>Exhibits, summer camps, and galleries</p>
+          </div>
+        </div>
+        <div class="legend-item">
+          <span class="color-swatch" style="background-color: #f68c34;"></span>
+          <div class="legend-text">
+            <strong>Theater Mitu (Mitu580)</strong>
+            <p>Combination of niche and common plays, small business and research</p>
+          </div>
+        </div>
+        <div class="legend-item">
+          <span class="color-swatch" style="background-color: #c0f696;"></span>
+          <div class="legend-text">
+            <strong>ZeroSpace</strong>
+            <p>Modern, digital and live theater</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="map-wrapper">
+        <img src="/images/map.png" alt="Base Map" class="base-map-img" />
+        <svg class="path-svg" viewBox="0 0 1408 1612" preserveAspectRatio="xMidYMid meet" id="spine-svg">
+          <defs>
+            <path id="spine-path" d="M 712 826 L 905 837 L 905 671 L 707 655 L 707 342 L 905 336" fill="none" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" />
+            
+            <mask id="glow-mask">
+              <rect width="100%" height="100%" fill="black" />
+              <circle id="glow-circle" cx="-1000" cy="-1000" r="225" fill="url(#glow-gradient)" />
+            </mask>
+
+            <radialGradient id="glow-gradient">
+              <stop offset="0%" stop-color="white" />
+              <stop offset="50%" stop-color="rgba(255,255,255,0.5)" />
+              <stop offset="100%" stop-color="black" />
+            </radialGradient>
+          </defs>
+
+          <!-- Dimmed baseline path -->
+          <use href="#spine-path" stroke="rgba(255, 51, 102, 0.3)" />
+
+          <!-- Glowing path revealed by mask -->
+          <use href="#spine-path" stroke="var(--color-secondary)" class="animated-path" mask="url(#glow-mask)" />
+        </svg>
+      </div>
+    </div>
+    
+    <div id="map-sim" class="map-layer sim-grid-layer">
+      <div class="sim-card">
+        <img src="/images/sim-1.png" alt="Simulation 1: Baseline" />
+        <div class="sim-text">
+          <h4>1. Baseline vs Intervention</h4>
+          <p><strong>Hypothesis:</strong> A curated path turns accidental discovery into intentional engagement.</p>
+          <p><strong>Finding:</strong> The Art Spine generates a 38% increase in studio visits vs. no intervention.</p>
+        </div>
+      </div>
+      <div class="sim-card">
+        <img src="/images/sim-2.png" alt="Simulation 2: Density" />
+        <div class="sim-text">
+          <h4>2. Density & Placement</h4>
+          <p><strong>Hypothesis:</strong> A shorter, denser route drives deeper cluster visits.</p>
+          <p><strong>Finding:</strong> Starting small and expanding later is smarter, driving significantly more visits.</p>
+        </div>
+      </div>
+      <div class="sim-card">
+        <img src="/images/sim-3.png" alt="Simulation 3: Commuters" />
+        <div class="sim-text">
+          <h4>3. Commuter Foot Traffic</h4>
+          <p><strong>Hypothesis:</strong> Subway commuters will increase Art Spine engagement.</p>
+          <p><strong>Finding:</strong> Commuters provide a pragmatic, tangible, and continuous stream of foot traffic.</p>
+        </div>
+      </div>
+    </div>
+
+    <img src="/images/congestion-relief.png" alt="Congestion Relief" id="map-congestion" class="map-layer" />
+    <img src="/images/property-value.png" alt="Property Value" id="map-property" class="map-layer" />
+  </div>
+</div>
+
+<style>
+  .map-container {
+    background-color: var(--color-dark);
+    color: var(--color-bg);
+    padding: 3rem 2rem;
+    margin: 3rem 0;
+    transform: rotate(1deg);
+  }
+  
+  .map-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .map-header h3 {
+    margin: 0;
+    color: var(--color-bg);
+  }
+
+  .map-controls {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .map-btn {
+    background: transparent;
+    border: 3px solid var(--color-bg);
+    color: var(--color-bg);
+    padding: 0.5rem 1rem;
+    font-family: var(--font-heading);
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+  }
+
+  .map-btn:hover, .map-btn.active {
+    background: var(--color-accent);
+    color: var(--color-text);
+    border-color: var(--color-accent);
+    transform: translate(-4px, -4px);
+    box-shadow: 4px 4px 0px var(--color-bg);
+  }
+
+  .map-display {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #222;
+    overflow: hidden;
+    border: 3px solid var(--color-bg);
+  }
+
+  .map-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transform: scale(0.98);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+  }
+
+  .map-layer.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+  }
+
+  .sim-grid-layer {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--color-dark);
+    overflow-y: auto;
+    align-items: stretch;
+  }
+
+  .sim-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-bg);
+    border: 3px solid var(--color-accent);
+    color: var(--color-text);
+  }
+
+  .sim-card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-bottom: 3px solid var(--color-accent);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+  }
+
+  .sim-text {
+    padding: 1rem;
+    font-size: 0.95rem;
+    flex: 1;
+  }
+
+  .sim-text h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--color-dark);
+    font-size: 1.1rem;
+    font-family: var(--font-heading);
+  }
+
+  .sim-text p {
+    margin: 0 0 0.5rem 0;
+    line-height: 1.4;
+  }
+
+  .interactive-path-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background: #222;
+  }
+
+  .map-wrapper {
+    flex: 1;
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .path-legend {
+    width: 320px;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 1.5rem;
+    color: var(--color-bg);
+    z-index: 10;
+    margin-left: 2rem;
+    flex-shrink: 0;
+  }
+
+  .path-legend h4 {
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--color-secondary);
+    padding-bottom: 0.5rem;
+  }
+
+  .legend-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: flex-start;
+  }
+
+  .legend-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .color-swatch {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    flex-shrink: 0;
+    margin-top: 4px;
+    border: 2px solid var(--color-bg);
+  }
+
+  .legend-text {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+
+  .legend-text strong {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+    font-family: var(--font-heading);
+    letter-spacing: 0.5px;
+  }
+
+  .legend-text p {
+    margin: 0;
+    font-family: var(--font-body);
+    opacity: 0.9;
+  }
+
+  .base-map-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: none;
+    box-shadow: none;
+  }
+
+  .path-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: auto; /* Allow mouse events on SVG */
+  }
+
+  .animated-path {
+    stroke-dasharray: 4000;
+    stroke-dashoffset: 4000;
+    animation: draw 3s ease forwards;
+  }
+
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+</style>
+
+<script>
+  // Setup Map Tabs
+  const setupMap = () => {
+    const buttons = document.querySelectorAll('.map-btn');
+    const layers = document.querySelectorAll('.map-layer');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        layers.forEach(l => l.classList.remove('active'));
+
+        btn.classList.add('active');
+        const targetId = `map-${(btn as HTMLElement).dataset.target}`;
+        document.getElementById(targetId)?.classList.add('active');
+      });
+    });
+
+    // Setup Hover Interaction on SVG
+    const svg = document.getElementById('spine-svg') as any;
+    const glowCircle = document.getElementById('glow-circle');
+    
+    if (svg && glowCircle) {
+      svg.addEventListener('mousemove', (e: MouseEvent) => {
+        // Get mouse coordinates relative to SVG viewBox
+        const pt = svg.createSVGPoint();
+        pt.x = e.clientX;
+        pt.y = e.clientY;
+        const svgP = pt.matrixTransform(svg.getScreenCTM().inverse());
+        
+        // Update circle mask position
+        glowCircle.setAttribute('cx', svgP.x.toString());
+        glowCircle.setAttribute('cy', svgP.y.toString());
+      });
+
+      svg.addEventListener('mouseleave', () => {
+        // Hide glow when mouse leaves
+        glowCircle.setAttribute('cx', '-1000');
+        glowCircle.setAttribute('cy', '-1000');
+      });
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded', setupMap);
+</script>
