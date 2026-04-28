@@ -20,6 +20,8 @@ jobs:
         uses: withastro/action@v3
         with:
             path: ./orbital-osiris
+            node-version: 22
+
 
   deploy:
     needs: build
