@@ -1,0 +1,110 @@
+{
+  "total_count": 2,
+  "jobs": [
+    {
+      "id": 73461449255,
+      "run_id": 25073944935,
+      "workflow_name": "Deploy to GitHub Pages",
+      "head_branch": "main",
+      "run_url": "https://api.github.com/repos/Cornell-Tech-Urban-Tech-Hub/uds26_team1/actions/runs/25073944935",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOR8EvEM8AAAARGqTCJw",
+      "head_sha": "c55b6f721d8b68ff780eabb001872e177b261f6e",
+      "url": "https://api.github.com/repos/Cornell-Tech-Urban-Tech-Hub/uds26_team1/actions/jobs/73461449255",
+      "html_url": "https://github.com/Cornell-Tech-Urban-Tech-Hub/uds26_team1/actions/runs/25073944935/job/73461449255",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-04-28T19:43:42Z",
+      "started_at": "2026-04-28T19:43:46Z",
+      "completed_at": "2026-04-28T19:44:13Z",
+      "name": "build",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-04-28T19:43:47Z",
+          "completed_at": "2026-04-28T19:43:52Z"
+        },
+        {
+          "name": "Checkout your repository using git",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-04-28T19:43:52Z",
+          "completed_at": "2026-04-28T19:43:55Z"
+        },
+        {
+          "name": "Install, build, and upload your site",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 3,
+          "started_at": "2026-04-28T19:43:55Z",
+          "completed_at": "2026-04-28T19:44:10Z"
+        },
+        {
+          "name": "Post Install, build, and upload your site",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-04-28T19:44:10Z",
+          "completed_at": "2026-04-28T19:44:10Z"
+        },
+        {
+          "name": "Post Checkout your repository using git",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-04-28T19:44:10Z",
+          "completed_at": "2026-04-28T19:44:10Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-04-28T19:44:10Z",
+          "completed_at": "2026-04-28T19:44:10Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/Cornell-Tech-Urban-Tech-Hub/uds26_team1/check-runs/73461449255",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000000362,
+      "runner_name": "GitHub Actions 1000000362",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 73461528234,
+      "run_id": 25073944935,
+      "workflow_name": "Deploy to GitHub Pages",
+      "head_branch": "main",
+      "run_url": "https://api.github.com/repos/Cornell-Tech-Urban-Tech-Hub/uds26_team1/actions/runs/25073944935",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOR8EvEM8AAAARGqX2qg",
+      "head_sha": "c55b6f721d8b68ff780eabb001872e177b261f6e",
+      "url": "https://api.github.com/repos/Cornell-Tech-Urban-Tech-Hub/uds26_team1/actions/jobs/73461528234",
+      "html_url": "https://github.com/Cornell-Tech-Urban-Tech-Hub/uds26_team1/actions/runs/25073944935/job/73461528234",
+      "status": "completed",
+      "conclusion": "skipped",
+      "created_at": "2026-04-28T19:44:13Z",
+      "started_at": "2026-04-28T19:44:13Z",
+      "completed_at": "2026-04-28T19:44:13Z",
+      "name": "deploy",
+      "steps": [
+
+      ],
+      "check_run_url": "https://api.github.com/repos/Cornell-Tech-Urban-Tech-Hub/uds26_team1/check-runs/73461528234",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": null,
+      "runner_name": null,
+      "runner_group_id": null,
+      "runner_group_name": null
+    }
+  ]
+}
