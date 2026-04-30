@@ -4,6 +4,7 @@ import ArtsySection from '../components/ArtsySection.astro';
 import InteractiveMap from '../components/InteractiveMap.astro';
 import Timeline from '../components/Timeline.astro';
 import AgentsOfChange from '../components/AgentsOfChange.astro';
+import Nav from '../components/Nav.astro';
 
 const SITE_TITLE = "The Gowanus Art Spine";
 const SITE_DESCRIPTION = "Transforming congestion into a thriving, creative community corridor.";
@@ -15,6 +16,8 @@ const SITE_DESCRIPTION = "Transforming congestion into a thriving, creative comm
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
+	<body>
+  		<Nav />
 		<main>
 			<!-- HERO SECTION -->
 			<header class="hero container reveal">

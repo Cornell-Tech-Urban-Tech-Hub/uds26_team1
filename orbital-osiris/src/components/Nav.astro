@@ -1,0 +1,101 @@
+---
+// Nav.astro
+---
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">The Gowanus Art Spine</a>
+    <div class="nav-links">
+      <a href="#insights" class="nav-link">Insights</a>
+      <a href="#transformation" class="nav-link">Transformation</a>
+      <a href="#prediction" class="nav-link">Prediction</a>
+      <a href="#consensus" class="nav-link">Consensus</a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-dark);
+    border-bottom: var(--border-width) solid var(--color-accent);
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+
+  .nav-logo {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-bg);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .nav-logo:hover {
+    color: var(--color-accent);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 0.25rem;
+  }
+
+  .nav-link {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-bg);
+    text-decoration: none;
+    padding: 0.4rem 0.75rem;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--color-dark);
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+
+  @media (max-width: 768px) {
+    .nav-logo { font-size: 0.8rem; }
+    .nav-link { font-size: 0.75rem; padding: 0.3rem 0.5rem; }
+  }
+</style>
+
+<script>
+  // Highlight active section as user scrolls
+  const sections = ['insights', 'transformation', 'prediction', 'consensus'];
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.querySelectorAll('.nav-link').forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${entry.target.id}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+</script>

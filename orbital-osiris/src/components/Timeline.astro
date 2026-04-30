@@ -10,10 +10,17 @@
     <div class="tl-item">
       <div class="tl-node accent"></div>
       <div class="tl-card sharp-border uneven-clip-1 skew-left interactive-hover">
-        <div class="phase accent">Phase 1</div>
-        <span class="time-label accent">1–4 months</span>
-        <h4>Listening Sessions</h4>
-        <p>Gathering feedback from Gowanus residents and local studio artists on traffic and congestion.</p>
+        <div class="tl-card-inner">
+          <div class="tl-text">
+            <div class="phase accent">Phase 1</div>
+            <span class="time-label accent">1–4 months</span>
+            <h4>Listening Sessions</h4>
+            <p>Gathering feedback from Gowanus residents and local studio artists on ideal studio viewing path.</p>
+          </div>
+          <div class="tl-image">
+            <img src={`${import.meta.env.BASE_URL}images/phase1.jpg`} alt="Community listening session" />
+          </div>
+        </div>
       </div>
     </div>
 
@@ -22,10 +29,17 @@
     <div class="tl-item right">
       <div class="tl-node dark"></div>
       <div class="tl-card sharp-border uneven-clip-2 skew-right interactive-hover">
-        <div class="phase dark">Phase 2</div>
-        <span class="time-label dark">4–9 months</span>
-        <h4>Design and Iteration</h4>
-        <p>Collaborative workshops with local studios and community leaders to outline the 'Art Spine' route, balancing safety and aesthetics.</p>
+        <div class="tl-card-inner reverse">
+          <div class="tl-image">
+            <img src={`${import.meta.env.BASE_URL}images/phase2.jpg`} alt="Design workshop" />
+          </div>
+          <div class="tl-text">
+            <div class="phase dark">Phase 2</div>
+            <span class="time-label dark">4–9 months</span>
+            <h4>Design and Iteration</h4>
+            <p>Collaborative workshops to outline the 'Art Spine' route, balancing safety and aesthetics.</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -34,10 +48,17 @@
     <div class="tl-item">
       <div class="tl-node accent"></div>
       <div class="tl-card sharp-border uneven-clip-1 skew-left interactive-hover">
-        <div class="phase accent">Phase 3</div>
-        <span class="time-label accent">9–12 months</span>
-        <h4>Pilot Program</h4>
-        <p>Expansion of the current Open Studios event (usually in October). Expansion of other similiar Arts Gowanus events. Document and iterate. </p>
+        <div class="tl-card-inner">
+          <div class="tl-text">
+            <div class="phase accent">Phase 3</div>
+            <span class="time-label accent">9–12 months</span>
+            <h4>Pilot Program</h4>
+            <p>Temporary street closures and weekend art walks to test the impact of the spine.</p>
+          </div>
+          <div class="tl-image">
+            <img src={`${import.meta.env.BASE_URL}images/phase3.jpg`} alt="Pilot street closure" />
+          </div>
+        </div>
       </div>
     </div>
 
@@ -46,10 +67,17 @@
     <div class="tl-item right">
       <div class="tl-node dark"></div>
       <div class="tl-card sharp-border uneven-clip-2 skew-right interactive-hover">
-        <div class="phase dark">Phase 4</div>
-        <span class="time-label dark">Year 2 and beyond</span>
-        <h4>Implementation</h4>
-        <p>Permanent zoning adjustments and streetscaping for the full Gowanus Art Spine.</p>
+        <div class="tl-card-inner reverse">
+          <div class="tl-image">
+            <img src={`${import.meta.env.BASE_URL}images/phase4.jpg`} alt="Completed streetscape" />
+          </div>
+          <div class="tl-text">
+            <div class="phase dark">Phase 4</div>
+            <span class="time-label dark">Year 2 and beyond</span>
+            <h4>Implementation</h4>
+            <p>Permanent zoning adjustments and streetscaping for the full Gowanus Art Spine.</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -67,7 +95,6 @@
     margin-bottom: 3rem;
   }
 
-  /* Wrapper: spine is a left border on this element */
   .tl-wrap {
     border-left: 4px solid color-mix(in srgb, var(--color-dark) 20%, transparent);
     margin-left: 3rem;
@@ -75,29 +102,15 @@
     position: relative;
   }
 
-  /* Gap divs create coloured spine segments between cards */
   .tl-gap {
-    border-left: 6px solid transparent;
-    margin-left: -5px; /* overlap the wrap border */
+    margin-left: -5px;
     position: relative;
   }
 
-  .gap-1 {
-    height: 60px;
-    
-  }
+  .gap-1 { height: 60px; }
+  .gap-2 { height: 75px; }
+  .gap-3 { height: 180px; }
 
-  .gap-2 {
-    height: 75px;
-    
-  }
-
-  .gap-3 {
-    height: 180px;
-    
-  }
-
-  /* Each row */
   .tl-item {
     display: flex;
     align-items: flex-start;
@@ -105,18 +118,17 @@
     position: relative;
   }
 
-  /* Right-side cards shift over */
   .tl-item.right {
     padding-left: 45%;
   }
 
-  /* ── NODE ── */
+  /* Nodes */
   .tl-node {
     width: 20px;
     height: 20px;
     border-radius: 50%;
     flex-shrink: 0;
-    margin-left: -23px;  /* was -12px, now centers on the 4px border */
+    margin-left: -23px;
     margin-top: 1.2rem;
     z-index: 2;
     position: relative;
@@ -133,15 +145,48 @@
     margin-left: -23px;
   }
 
-  /* ── CARD ── */
+  /* Card */
   .tl-card {
     background: #fff;
-    padding: 1.25rem 1.5rem;
     flex: 1;
-    max-width: 420px;
+    max-width: 520px;
+    overflow: hidden;
   }
 
-  /* ── LABELS ── */
+  .tl-card-inner {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .tl-card-inner.reverse {
+    flex-direction: row-reverse;
+  }
+
+  /* Text side */
+  .tl-text {
+    padding: 1.25rem 1.5rem;
+    flex: 1;
+  }
+
+  /* Image side */
+  .tl-image {
+    width: 160px;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .tl-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+  }
+
+  /* Labels */
   .phase {
     display: inline-block;
     color: #fff;
@@ -167,12 +212,12 @@
   .time-label.accent { color: var(--color-accent); }
   .time-label.dark   { color: var(--color-dark); }
 
-  .tl-card h4 { margin-bottom: 0.4rem; }
-  .tl-card p  { margin: 0; font-size: 1rem; }
+  .tl-text h4 { margin-bottom: 0.4rem; }
+  .tl-text p  { margin: 0; font-size: 0.95rem; max-width: 100%; }
 
   @media (max-width: 768px) {
-    .tl-item.right {
-      padding-left: 0;
-    }
+    .tl-item.right { padding-left: 0; }
+
+    .tl-image { width: 120px; }
   }
 </style>
