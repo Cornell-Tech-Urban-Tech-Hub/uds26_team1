@@ -229,63 +229,74 @@
     </div><!-- /map-sim -->
 
     <div id="map-congestion" class="map-layer congestion-layer">
-      <div class="congestion-content">
-        <div class="congestion-intro">
+      <div class="cong-hero">
+        <img src={`${import.meta.env.BASE_URL}/images/congestion-hero2.png`} alt="New development in Gowanus" class="cong-hero-img" />
+        <div class="cong-hero-overlay">
+          <p class="cong-hero-text">New Neighbor <span>"Congestion Relief"</span>-Style Pricing</p>
+        </div>
+      </div>
+
+      <div class="cong-body">
+
+        <div class="cong-intro">
           <p>As Gowanus grows, new luxury residents benefit from the neighborhood's culture — built by artists over decades. The <strong>Congestion Relief Fee</strong> asks newcomers to invest in preserving what made them want to move here.</p>
         </div>
-        <div class="congestion-stats">
-          <div class="c-stat accent">
-            <div class="c-stat-num">5,300+</div>
-            <div class="c-stat-label">Expected new units filed since the 2021 rezoning</div>
+
+        <div class="cong-stats">
+          <div class="c-stat">
+            <div class="c-num">5,300+</div>
+            <div class="c-label">New units filed since the 2021 rezoning</div>
           </div>
           <div class="c-stat">
-            <div class="c-stat-num">2.3</div>
-            <div class="c-stat-label">Average people per household in NYC (Census)</div>
+            <div class="c-num">2.3</div>
+            <div class="c-label">Average people per household in NYC (Census)</div>
           </div>
-          <div class="c-stat accent">
-            <div class="c-stat-num">~12,000</div>
-            <div class="c-stat-label">New renters projected to arrive in Gowanus</div>
+          <div class="c-stat highlight">
+            <div class="c-num">~12,000</div>
+            <div class="c-label">New renters projected to arrive in Gowanus</div>
           </div>
-          <div class="c-stat">
-            <div class="c-stat-num">$2.4M</div>
-            <div class="c-stat-label">Potential fund at $200/person one-time fee</div>
+          <div class="c-stat highlight">
+            <div class="c-num">$2.4M</div>
+            <div class="c-label">Potential fund at $200/person one-time fee</div>
           </div>
         </div>
-        </div>
-        <div class="congestion-flow">
-          <div class="c-step">
-            <div class="c-step-num">01</div>
+
+        <div class="cong-flow">
+          <div class="cong-step">
+            <div class="cong-num">01</div>
             <p>New resident moves into a luxury development in the Congestion Relief Zone</p>
           </div>
-          <div class="c-arrow">→</div>
-          <div class="c-step">
-            <div class="c-step-num">02</div>
+          <div class="cong-arrow">→</div>
+          <div class="cong-step">
+            <div class="cong-num">02</div>
             <p>Pays a one-time fee at closing or lease signing</p>
           </div>
-          <div class="c-arrow">→</div>
-          <div class="c-step">
-            <div class="c-step-num">03</div>
+          <div class="cong-arrow">→</div>
+          <div class="cong-step">
+            <div class="cong-num">03</div>
             <p>Funds go directly into the Art Spine Fund for studio preservation and streetscaping</p>
           </div>
         </div>
-        <div class="congestion-why">
-          <div class="why-item">
-            <span class="why-x">✗</span>
-            <p><strong>Not a tax.</strong> A community contribution built into the purchase process.</p>
+
+        <div class="cong-why">
+          <div class="cong-why-item">
+            <span class="cx">✗</span>
+            <p><strong>Not a tax.</strong> A community contribution built into the purchase and rental process — no complicated extra process to receive funds.</p>
           </div>
-          <div class="why-item">
-            <span class="why-check">✓</span>
-            <p><strong>Community-controlled.</strong> A resident board — majority artists and long-term Gowanus members — decides how funds are allocated.</p>
+          <div class="cong-why-item">
+            <span class="ck">✓</span>
+            <p><strong>Community-controlled.</strong> A resident board — majority artists and long-term Gowanus members — decides how funds are spent.</p>
           </div>
-          <div class="why-item">
-            <span class="why-x">✗</span>
-            <p><strong>Not displacement.</strong> Unlike the High Line, the Art Spine uses development pressure to fund artist retention, not accelerate their exit.</p>
+          <div class="cong-why-item">
+            <span class="cx">✗</span>
+            <p><strong>Not displacement.</strong> Unlike the High Line, the Art Spine uses development pressure to fund artist retention.</p>
           </div>
-          <div class="why-item">
-            <span class="why-check">✓</span>
-            <p><strong>Scalable.</strong> As more developments come online, the fund grows automatically — without burdening existing residents.</p>
+          <div class="cong-why-item">
+            <span class="ck">✓</span>
+            <p><strong>Scalable.</strong> As more developments come online, the fund grows automatically without burdening existing residents.</p>
           </div>
         </div>
+
       </div>
     </div>
 
@@ -632,39 +643,168 @@
   @keyframes draw { to { stroke-dashoffset: 0; } }
 
   /* ── CONGESTION RELIEF TAB ── */
-  .congestion-layer { overflow-y: auto; background: var(--color-dark); display: flex; align-items: flex-start; }
-
-  .congestion-content {
-    padding: 1.5rem 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+  .congestion-layer {
+    overflow-y: auto;
+    background: var(--color-dark);
+    display: block;
+    position: absolute;
+    top: 0; left: 0;
     width: 100%;
-    color: var(--color-bg);
-    box-sizing: border-box;
+    height: 100%;
   }
 
-  .congestion-intro { grid-column: 1 / -1; font-size: 0.95rem; line-height: 1.6; opacity: 0.9; }
-  .congestion-intro strong { color: var(--color-accent); }
+  .cong-hero {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
 
-  .congestion-stats { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  .cong-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    display: block;
+    border: none;
+    box-shadow: none;
+  }
 
-  .c-stat { background: rgba(255,255,255,0.06); padding: 1rem; border-left: 4px solid rgba(255,255,255,0.2); }
-  .c-stat.accent { border-left-color: var(--color-accent); background: rgba(255,255,255,0.1); }
-  .c-stat-num { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 900; color: var(--color-accent); line-height: 1; margin-bottom: 0.35rem; }
-  .c-stat-label { font-size: 0.78rem; line-height: 1.4; opacity: 0.8; }
+  .cong-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.75) 40%, rgba(0,0,0,0.2));
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 2rem;
+  }
 
-  .congestion-flow { display: flex; align-items: center; gap: 0.5rem; }
-  .c-step { flex: 1; background: rgba(255,255,255,0.06); padding: 1rem; }
-  .c-step-num { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 900; color: var(--color-accent); margin-bottom: 0.4rem; }
-  .c-step p { margin: 0; font-size: 0.82rem; line-height: 1.5; opacity: 0.85; }
-  .c-arrow { font-size: 1.4rem; color: var(--color-accent); font-weight: 900; flex-shrink: 0; }
+  .cong-hero-text {
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    max-width: 600px;
+    margin: 0;
+  }
 
-  .congestion-why { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-  .why-item { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.82rem; line-height: 1.5; opacity: 0.9; }
-  .why-x { color: #ff6b6b; font-weight: 900; flex-shrink: 0; font-size: 1rem; }
-  .why-check { color: #69db7c; font-weight: 900; flex-shrink: 0; font-size: 1rem; }
-  .why-item p { margin: 0; }
+  .cong-hero-text span {
+    color: var(--color-accent);
+  }
+
+  .cong-body {
+    padding: 1.25rem 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    color: var(--color-bg);
+  }
+
+  .cong-intro {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    opacity: 0.85;
+    max-width: 700px;
+  }
+
+  .cong-intro strong {
+    color: var(--color-accent);
+  }
+
+  /* Stats */
+  .cong-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+  }
+
+  .c-stat {
+    background: rgba(255,255,255,0.06);
+    border-left: 3px solid rgba(255,255,255,0.15);
+    padding: 0.75rem 1rem;
+  }
+
+  .c-stat.highlight {
+    border-left-color: var(--color-accent);
+    background: rgba(255,255,255,0.1);
+  }
+
+  .c-num {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--color-accent);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .c-label {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    opacity: 0.75;
+  }
+
+  /* Flow */
+  .cong-flow {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .cong-step {
+    flex: 1;
+    background: rgba(255,255,255,0.06);
+    padding: 0.75rem 1rem;
+  }
+
+  .cong-num {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--color-accent);
+    margin-bottom: 0.35rem;
+  }
+
+  .cong-step p {
+    margin: 0;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    opacity: 0.85;
+  }
+
+  .cong-arrow {
+    font-size: 1.2rem;
+    color: var(--color-accent);
+    font-weight: 900;
+    padding-top: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  /* Why */
+  .cong-why {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+
+  .cong-why-item {
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    background: rgba(255,255,255,0.04);
+    padding: 0.6rem 0.75rem;
+  }
+
+  .cong-why-item p { margin: 0; opacity: 0.88; }
+
+  .cx { color: #ff6b6b; font-weight: 900; flex-shrink: 0; }
+  .ck { color: #69db7c; font-weight: 900; flex-shrink: 0; }
 </style>
 
 <script>

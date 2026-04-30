@@ -1,0 +1,74 @@
+---
+// AgentsOfChange.astro
+---
+
+<div class="agents-container">
+  <svg width="100%" viewBox="0 0 680 520" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>Agents of Change</title>
+    <desc>Concentric circles showing stakeholders from inner core to outer city agencies for the Gowanus Art Spine</desc>
+
+    <!-- Title -->
+    <text font-family="Impact, Arial Black, sans-serif" text-transform="uppercase" x="22" y="48" font-size="30" fill="#ff3366" style="text-transform:uppercase;font-family:Impact,'Arial Black',sans-serif;">AGENTS</text>
+    <text font-family="Impact, Arial Black, sans-serif" x="22" y="78" font-size="30" fill="#000000" style="text-transform:uppercase;font-family:Impact,'Arial Black',sans-serif;">OF CHANGE</text>
+    <line x1="22" y1="86" x2="190" y2="86" stroke="#ff3366" stroke-width="4"/>
+
+    <!-- Outer ring -->
+    <circle cx="380" cy="278" r="208" fill="none" stroke="#000000" stroke-width="4"/>
+    <!-- Mid ring -->
+    <circle cx="380" cy="278" r="143" fill="none" stroke="#ff3366" stroke-width="3"/>
+    <!-- Inner ring -->
+    <circle cx="380" cy="278" r="83" fill="none" stroke="#ff3366" stroke-width="3"/>
+    <!-- Core -->
+    <circle cx="380" cy="278" r="52" fill="#ff3366" stroke="#000000" stroke-width="4"/>
+
+    <!-- Core text: white on pink -->
+    <text x="380" y="265" text-anchor="middle" font-size="10" fill="#ffffff" style="text-transform:uppercase;font-family:Impact,'Arial Black',sans-serif;">ARTS GOWANUS</text>
+    <text x="380" y="279" text-anchor="middle" font-size="9" fill="#ffffff" style="text-transform:uppercase;font-family:Impact,'Arial Black',sans-serif;">+ CONSERVANCY</text>
+    <text x="380" y="293" text-anchor="middle" font-size="9" fill="#ffffff" style="text-transform:uppercase;font-family:Impact,'Arial Black',sans-serif;">TEAM</text>
+
+    <!-- Inner ring: current residents -->
+    <rect x="316" y="200" width="128" height="28" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="380" y="219" text-anchor="middle" font-size="10" fill="#000000" style="text-transform:uppercase;font-family:Impact,'Arial Black',sans-serif;">CURRENT RESIDENTS</text>
+
+    <!-- Mid ring: new residents -->
+    <rect x="196" y="264" width="106" height="28" fill="#00e5ff" stroke="#000000" stroke-width="2"/>
+    <text x="249" y="282" text-anchor="middle" font-size="10" fill="#000000" style="text-transform:uppercase;font-family:Impact,'Arial Black',sans-serif;">NEW RESIDENTS</text>
+
+    <!-- Mid ring: Brooklyn Borough -->
+    <rect x="460" y="264" width="116" height="28" fill="#00e5ff" stroke="#000000" stroke-width="2"/>
+    <text x="518" y="282" text-anchor="middle" font-size="10" fill="#000000" style="text-transform:uppercase;font-family:Impact,'Arial Black',sans-serif;">BKLYN BOROUGH</text>
+
+    <!-- Outer: NYC Council Finance -->
+    <rect x="282" y="66" width="196" height="30" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="380" y="86" text-anchor="middle" font-size="10" fill="#000000" style="text-transform:uppercase;font-family:Impact,'Arial Black',sans-serif;">NYC COUNCIL FINANCE</text>
+
+    <!-- Outer: City of NY -->
+    <rect x="566" y="148" width="106" height="40" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="619" y="164" text-anchor="middle" font-size="10" fill="#000000" style="text-transform:uppercase;font-family:Impact,'Arial Black',sans-serif;">CITY OF NY</text>
+    <text x="619" y="179" text-anchor="middle" font-size="9" fill="#000000" style="font-family:'Courier New',monospace;">(congestion relief)</text>
+
+    <!-- Outer: NYC Planning -->
+    <rect x="566" y="368" width="106" height="40" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="619" y="384" text-anchor="middle" font-size="10" fill="#000000" style="text-transform:uppercase;font-family:Impact,'Arial Black',sans-serif;">NYC PLANNING</text>
+    <text x="619" y="399" text-anchor="middle" font-size="9" fill="#000000" style="font-family:'Courier New',monospace;">(infrastructure)</text>
+
+    <!-- Outer: NYC Dept of Finance -->
+    <rect x="282" y="456" width="196" height="30" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="380" y="476" text-anchor="middle" font-size="10" fill="#000000" style="text-transform:uppercase;font-family:Impact,'Arial Black',sans-serif;">NYC DEPT OF FINANCE</text>
+
+    <!-- Dashed connector lines -->
+    <line x1="380" y1="96" x2="380" y2="195" stroke="#ff3366" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <line x1="566" y1="168" x2="524" y2="270" stroke="#000000" stroke-width="1" stroke-dasharray="4 3"/>
+    <line x1="566" y1="388" x2="524" y2="288" stroke="#000000" stroke-width="1" stroke-dasharray="4 3"/>
+    <line x1="380" y1="456" x2="380" y2="386" stroke="#000000" stroke-width="1.5" stroke-dasharray="4 3"/>
+  </svg>
+</div>
+
+<style>
+  .agents-container {
+    margin: 4rem 0;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
