@@ -9,7 +9,7 @@
       <button class="map-btn active" data-target="path">The Path</button>
       <button class="map-btn" data-target="sim">Simulation Data</button>
       <button class="map-btn" data-target="congestion">Congestion Relief</button>
-      <button class="map-btn" data-target="property">Property Value</button>
+      
     </div>
   </div>
 
@@ -52,57 +52,244 @@
         <svg class="path-svg" viewBox="0 0 1408 1612" preserveAspectRatio="xMidYMid meet" id="spine-svg">
           <defs>
             <path id="spine-path" d="M 712 826 L 905 837 L 905 671 L 707 655 L 707 342 L 905 336" fill="none" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" />
-            
             <mask id="glow-mask">
               <rect width="100%" height="100%" fill="black" />
               <circle id="glow-circle" cx="-1000" cy="-1000" r="225" fill="url(#glow-gradient)" />
             </mask>
-
             <radialGradient id="glow-gradient">
               <stop offset="0%" stop-color="white" />
               <stop offset="50%" stop-color="rgba(255,255,255,0.5)" />
               <stop offset="100%" stop-color="black" />
             </radialGradient>
           </defs>
-
-          <!-- Dimmed baseline path -->
           <use href="#spine-path" stroke="rgba(255, 51, 102, 0.3)" />
-
-          <!-- Glowing path revealed by mask -->
           <use href="#spine-path" stroke="var(--color-secondary)" class="animated-path" mask="url(#glow-mask)" />
         </svg>
       </div>
     </div>
     
-    <div id="map-sim" class="map-layer sim-grid-layer">
-      <div class="sim-card">
-        <img src={`${import.meta.env.BASE_URL}/images/sim-1.png`} alt="Simulation 1: Baseline" />
-        <div class="sim-text">
-          <h4>1. Baseline vs Intervention</h4>
-          <p><strong>Hypothesis:</strong> A curated path turns accidental discovery into intentional engagement.</p>
-          <p><strong>Finding:</strong> The Art Spine generates a 38% increase in studio visits vs. no intervention.</p>
+    <!-- ── SIMULATION CAROUSEL ── -->
+    <div id="map-sim" class="map-layer sim-carousel-layer">
+      <div class="sim-carousel">
+        <div class="sim-slides" id="sim-slides">
+
+          <!-- Slide 1: Baseline vs Intervention -->
+          <div class="sim-slide">
+            <div class="sim-media">
+              <!--
+                To use a .mov video, replace <img> with:
+                <video controls playsinline muted loop>
+                  <source src={`${import.meta.env.BASE_URL}/videos/sim-1.mov`} type="video/quicktime" />
+                  <source src={`${import.meta.env.BASE_URL}/videos/sim-1.mp4`} type="video/mp4" />
+                </video>
+              -->
+              <img src={`${import.meta.env.BASE_URL}/images/sim-1.png`} alt="Simulation 1: Baseline vs Intervention" />
+            </div>
+            <div class="sim-info">
+              <div class="sim-index-label">Escenario 01 / 04</div>
+              <div class="sim-scenario-tag">Baseline vs Intervention</div>
+              <h4>Baseline vs Intervention</h4>
+              <div class="sim-finding-block">
+                <div class="sim-field">
+                  <span class="sim-field-label">Hypothesis</span>
+                  <p>A curated path turns accidental discovery into intentional engagement.</p>
+                </div>
+                <div class="sim-field">
+                  <span class="sim-field-label">From our simulation</span>
+                  <p>55 vs. 40 studio visits at cycle 350 — a <strong>38% increase</strong>.</p>
+                </div>
+                <div class="sim-field finding">
+                  <span class="sim-field-label">Finding</span>
+                  <p>Even under conservative assumptions, the Arts Spine generates <strong>38% more studio visits</strong> than no intervention.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2: Studio Density / Placement -->
+          <div class="sim-slide">
+            <div class="sim-media">
+              <!--
+                <video controls playsinline muted loop>
+                  <source src={`${import.meta.env.BASE_URL}/videos/sim-2.mov`} type="video/quicktime" />
+                  <source src={`${import.meta.env.BASE_URL}/videos/sim-2.mp4`} type="video/mp4" />
+                </video>
+              -->
+              <img src={`${import.meta.env.BASE_URL}/images/sim-2.png`} alt="Simulation 2: Studio Density & Placement" />
+            </div>
+            <div class="sim-info">
+              <div class="sim-index-label">Escenario 02 / 04</div>
+              <div class="sim-scenario-tag">Studio Density / Placement</div>
+              <h4>Density & Placement</h4>
+              <div class="sim-finding-block">
+                <div class="sim-field">
+                  <span class="sim-field-label">Hypothesis</span>
+                  <p>A longer spine reaches more studios but may dilute engagement. A shorter, denser route could drive deeper visits within a cluster.</p>
+                </div>
+                <div class="sim-field finding">
+                  <span class="sim-field-label">Simulation Finding</span>
+                  <p>The shorter spine still drives significantly more visits than the baseline. <strong>Starting small</strong>, measuring impact, and expanding later may be the smarter path forward.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3: Signage / Wayfinding Awareness -->
+          <div class="sim-slide">
+            <div class="sim-media sim-media-duo">
+              <!--
+                Replace <img> tags with <video> blocks for .mov support:
+                <video controls playsinline muted loop>
+                  <source src={`${import.meta.env.BASE_URL}/videos/sim-3a.mov`} type="video/quicktime" />
+                  <source src={`${import.meta.env.BASE_URL}/videos/sim-3a.mp4`} type="video/mp4" />
+                </video>
+              -->
+              <div class="media-duo-item">
+                <video autoplay playsinline muted loop>
+                  <source src={`${import.meta.env.BASE_URL}/videos/Access_10_.mp4`} type="video/mp4" />
+                </video>
+                <span class="media-duo-label">Low Awareness</span>
+              </div>
+              <div class="media-duo-item">
+                <video autoplay playsinline muted loop>
+                  <source src={`${import.meta.env.BASE_URL}/videos/Access_75_.mp4`} type="video/mp4" />
+                </video>
+                <span class="media-duo-label">High Awareness</span>
+              </div>
+            </div>
+            <div class="sim-info">
+              <div class="sim-index-label">Escenario 03 / 04</div>
+              <div class="sim-scenario-tag">Signage / Wayfinding Awareness</div>
+              <h4>Signage & Wayfinding</h4>
+              <div class="sim-finding-block">
+                <div class="sim-field">
+                  <span class="sim-field-label">Hypothesis</span>
+                  <p>Better wayfinding and signage investment increases pedestrians who actively engage with the spine. Higher spend → + awareness → + visits.</p>
+                </div>
+                <div class="sim-field finding">
+                  <span class="sim-field-label">Simulation Finding</span>
+                  <p>Adjusting awareness from low to high produces a visible increase in active pedestrian flow. Stakeholders have a <strong>tunable lever</strong> to model different investment scenarios.</p>
+                </div>
+                <div class="sim-field source-field">
+                  <span class="sim-field-label">Source</span>
+                  <p><a href="https://doi.org/10.1016/j.ssci.2021.105440" target="_blank" rel="noopener">Wayfinding Signage and Walking Perception in Urban Environments</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4: Art Spine + Footprint (MTA Commuters) -->
+          <div class="sim-slide">
+            <div class="sim-media">
+              <!--
+                <video controls playsinline muted loop>
+                  <source src={`${import.meta.env.BASE_URL}/videos/sim-4.mov`} type="video/quicktime" />
+                  <source src={`${import.meta.env.BASE_URL}/videos/sim-4.mp4`} type="video/mp4" />
+                </video>
+              -->
+              <video autoplay playsinline muted loop>
+                <source src={`${import.meta.env.BASE_URL}/videos/trimmed_spine_.mp4`} type="video/mp4" />
+              </video>
+            </div>
+            <div class="sim-info">
+              <div class="sim-index-label">Escenario 04 / 04</div>
+              <div class="sim-scenario-tag mta-tag">MTA — Pedestrian Origin Points</div>
+              <h4>Art Spine + Footprint</h4>
+              <div class="sim-finding-block">
+                <div class="sim-field">
+                  <span class="sim-field-label">Hypothesis</span>
+                  <p>Commuters from subway stations will increase foot traffic and engagement of the Art Spine.</p>
+                </div>
+                <div class="sim-field finding">
+                  <span class="sim-field-label">Simulation Finding</span>
+                  <ul class="sim-bullets">
+                    <li><strong>Blue line:</strong> Unique commuters entering the area — eventually plateaus ± a negligible number each week.</li>
+                    <li><strong>Pink line:</strong> How commuters engage with the Art Spine over time.</li>
+                  </ul>
+                  <p>Shows a pragmatic but tangible amount of foot traffic the Art Spine will continue to receive.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /sim-slides -->
+      </div><!-- /sim-carousel -->
+
+      <!-- Nav controls -->
+      <div class="sim-nav">
+        <button class="sim-nav-btn" id="sim-prev" aria-label="Previous simulation">&#8592;</button>
+        <div class="sim-dots" id="sim-dots">
+          <span class="sim-dot active"></span>
+          <span class="sim-dot"></span>
+          <span class="sim-dot"></span>
+          <span class="sim-dot"></span>
         </div>
+        <button class="sim-nav-btn" id="sim-next" aria-label="Next simulation">&#8594;</button>
       </div>
-      <div class="sim-card">
-        <img src={`${import.meta.env.BASE_URL}/images/sim-2.png`} alt="Simulation 2: Density" />
-        <div class="sim-text">
-          <h4>2. Density & Placement</h4>
-          <p><strong>Hypothesis:</strong> A shorter, denser route drives deeper cluster visits.</p>
-          <p><strong>Finding:</strong> Starting small and expanding later is smarter, driving significantly more visits.</p>
+    </div><!-- /map-sim -->
+
+    <div id="map-congestion" class="map-layer congestion-layer">
+      <div class="congestion-content">
+        <div class="congestion-intro">
+          <p>As Gowanus grows, new luxury residents benefit from the neighborhood's culture — built by artists over decades. The <strong>Congestion Relief Fee</strong> asks newcomers to invest in preserving what made them want to move here.</p>
         </div>
-      </div>
-      <div class="sim-card">
-        <img src={`${import.meta.env.BASE_URL}/images/sim-3.png`} alt="Simulation 3: Commuters" />
-        <div class="sim-text">
-          <h4>3. Commuter Foot Traffic</h4>
-          <p><strong>Hypothesis:</strong> Subway commuters will increase Art Spine engagement.</p>
-          <p><strong>Finding:</strong> Commuters provide a pragmatic, tangible, and continuous stream of foot traffic.</p>
+        <div class="congestion-stats">
+          <div class="c-stat accent">
+            <div class="c-stat-num">5,300+</div>
+            <div class="c-stat-label">Expected new units filed since the 2021 rezoning</div>
+          </div>
+          <div class="c-stat">
+            <div class="c-stat-num">2.3</div>
+            <div class="c-stat-label">Average people per household in NYC (Census)</div>
+          </div>
+          <div class="c-stat accent">
+            <div class="c-stat-num">~12,000</div>
+            <div class="c-stat-label">New renters projected to arrive in Gowanus</div>
+          </div>
+          <div class="c-stat">
+            <div class="c-stat-num">$2.4M</div>
+            <div class="c-stat-label">Potential fund at $200/person one-time fee</div>
+          </div>
+        </div>
+        </div>
+        <div class="congestion-flow">
+          <div class="c-step">
+            <div class="c-step-num">01</div>
+            <p>New resident moves into a luxury development in the Congestion Relief Zone</p>
+          </div>
+          <div class="c-arrow">→</div>
+          <div class="c-step">
+            <div class="c-step-num">02</div>
+            <p>Pays a one-time fee at closing or lease signing</p>
+          </div>
+          <div class="c-arrow">→</div>
+          <div class="c-step">
+            <div class="c-step-num">03</div>
+            <p>Funds go directly into the Art Spine Fund for studio preservation and streetscaping</p>
+          </div>
+        </div>
+        <div class="congestion-why">
+          <div class="why-item">
+            <span class="why-x">✗</span>
+            <p><strong>Not a tax.</strong> A community contribution built into the purchase process.</p>
+          </div>
+          <div class="why-item">
+            <span class="why-check">✓</span>
+            <p><strong>Community-controlled.</strong> A resident board — majority artists and long-term Gowanus members — decides how funds are allocated.</p>
+          </div>
+          <div class="why-item">
+            <span class="why-x">✗</span>
+            <p><strong>Not displacement.</strong> Unlike the High Line, the Art Spine uses development pressure to fund artist retention, not accelerate their exit.</p>
+          </div>
+          <div class="why-item">
+            <span class="why-check">✓</span>
+            <p><strong>Scalable.</strong> As more developments come online, the fund grows automatically — without burdening existing residents.</p>
+          </div>
         </div>
       </div>
     </div>
 
-    <img src={`${import.meta.env.BASE_URL}/images/congestion-relief.png`} alt="Congestion Relief" id="map-congestion" class="map-layer" />
-    <img src={`${import.meta.env.BASE_URL}/images/property-value.png`} alt="Property Value" id="map-property" class="map-layer" />
+   
   </div>
 </div>
 
@@ -123,16 +310,8 @@
     margin-bottom: 2rem;
   }
 
-  .map-header h3 {
-    margin: 0;
-    color: var(--color-bg);
-  }
-
-  .map-controls {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
+  .map-header h3 { margin: 0; color: var(--color-bg); }
+  .map-controls { display: flex; gap: 1rem; flex-wrap: wrap; }
 
   .map-btn {
     background: transparent;
@@ -156,18 +335,16 @@
   .map-display {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    min-height: 500px;
     background: #222;
-    overflow: hidden;
+    overflow-y: auto;
     border: 3px solid var(--color-bg);
   }
 
   .map-layer {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     object-fit: contain;
     opacity: 0;
     transform: scale(0.98);
@@ -181,57 +358,222 @@
     pointer-events: auto;
   }
 
-  .sim-grid-layer {
+  /* ── SIMULATION CAROUSEL ── */
+  .sim-carousel-layer {
     display: flex;
-    gap: 1rem;
-    padding: 1rem;
+    flex-direction: column;
     background: var(--color-dark);
-    overflow-y: auto;
+    overflow: hidden;
+  }
+
+  .sim-carousel { flex: 1; overflow: hidden; position: relative; }
+
+  .sim-slides {
+    display: flex;
+    height: 100%;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  .sim-slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    overflow: hidden;
+  }
+
+  .sim-media {
+    flex: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111;
+    overflow: hidden;
+    border-right: 3px solid var(--color-accent);
+  }
+
+  .sim-media img,
+  .sim-media video {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border: none; box-shadow: none;
+    display: block;
+  }
+
+  /* Side-by-side media for Scenario 3 */
+  .sim-media-duo {
+    display: flex;
+    flex-direction: row;
     align-items: stretch;
   }
 
-  .sim-card {
+  .media-duo-item {
     flex: 1;
     display: flex;
     flex-direction: column;
-    background: var(--color-bg);
-    border: 3px solid var(--color-accent);
-    color: var(--color-text);
+    overflow: hidden;
+    position: relative;
   }
 
-  .sim-card img {
-    width: 100%;
-    aspect-ratio: 4/3;
-    object-fit: cover;
-    border-bottom: 3px solid var(--color-accent);
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    box-shadow: none;
+  .media-duo-item + .media-duo-item {
+    border-left: 2px solid rgba(255,255,255,0.12);
   }
 
-  .sim-text {
-    padding: 1rem;
-    font-size: 0.95rem;
+  .media-duo-item img,
+  .media-duo-item video {
     flex: 1;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border: none; box-shadow: none; display: block;
   }
 
-  .sim-text h4 {
-    margin: 0 0 0.5rem 0;
-    color: var(--color-dark);
-    font-size: 1.1rem;
+  .media-duo-label {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: rgba(0,0,0,0.72);
+    color: var(--color-accent);
     font-family: var(--font-heading);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+    padding: 0.3rem 0;
   }
 
-  .sim-text p {
-    margin: 0 0 0.5rem 0;
-    line-height: 1.4;
+  /* Info panel */
+  .sim-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1.5rem 1.75rem;
+    background: var(--color-bg);
+    color: var(--color-text);
+    overflow-y: auto;
   }
 
+  .sim-index-label {
+    font-family: var(--font-heading);
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.32;
+    margin-bottom: 0.3rem;
+  }
+
+  .sim-scenario-tag {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: var(--color-dark);
+    color: var(--color-bg);
+    padding: 0.2rem 0.6rem;
+    margin-bottom: 0.6rem;
+    align-self: flex-start;
+  }
+
+  .mta-tag { background: #003DA5; }
+
+  .sim-info h4 {
+    margin: 0 0 1rem 0;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--color-dark);
+    line-height: 1.2;
+    border-bottom: 3px solid var(--color-accent);
+    padding-bottom: 0.6rem;
+  }
+
+  .sim-finding-block { display: flex; flex-direction: column; gap: 0.85rem; }
+
+  .sim-field { display: flex; flex-direction: column; gap: 0.2rem; }
+
+  .sim-field-label {
+    font-family: var(--font-heading);
+    font-size: 0.64rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-dark);
+    opacity: 0.42;
+  }
+
+  .sim-field.finding .sim-field-label {
+    color: var(--color-accent, #f68c34);
+    opacity: 1;
+  }
+
+  .sim-field p { margin: 0; font-size: 0.88rem; line-height: 1.55; color: var(--color-dark); }
+  .sim-field p strong { color: var(--color-dark); }
+
+  .sim-bullets {
+    margin: 0.25rem 0 0.5rem 1rem;
+    padding: 0;
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: var(--color-dark);
+  }
+  .sim-bullets li { margin-bottom: 0.35rem; }
+
+  .source-field .sim-field-label { opacity: 0.32; }
+  .source-field p { font-size: 0.74rem; }
+  .source-field a { color: var(--color-accent); text-decoration: underline; word-break: break-word; }
+
+  /* Nav bar */
+  .sim-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    padding: 0.55rem 0;
+    background: var(--color-dark);
+    border-top: 2px solid rgba(255,255,255,0.08);
+    flex-shrink: 0;
+  }
+
+  .sim-nav-btn {
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.35);
+    color: var(--color-bg);
+    width: 2rem; height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: var(--font-heading);
+    line-height: 1;
+  }
+
+  .sim-nav-btn:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-text);
+    transform: translate(-2px, -2px);
+    box-shadow: 2px 2px 0 var(--color-bg);
+  }
+
+  .sim-dots { display: flex; gap: 0.5rem; align-items: center; }
+
+  .sim-dot {
+    width: 8px; height: 8px;
+    border-radius: 0;
+    background: rgba(255,255,255,0.25);
+    transition: background 0.25s ease, transform 0.25s ease;
+    display: block;
+    cursor: pointer;
+  }
+
+  .sim-dot.active { background: var(--color-accent); transform: scale(1.3); }
+
+  /* ── PATH LAYER ── */
   .interactive-path-layer {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     display: flex;
     align-items: center;
     background: #222;
@@ -248,7 +590,7 @@
 
   .path-legend {
     width: 320px;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0,0,0,0.85);
     padding: 1.5rem;
     color: var(--color-bg);
     z-index: 10;
@@ -263,61 +605,23 @@
     padding-bottom: 0.5rem;
   }
 
-  .legend-item {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    align-items: flex-start;
-  }
-
-  .legend-item:last-child {
-    margin-bottom: 0;
-  }
+  .legend-item { display: flex; gap: 1rem; margin-bottom: 1rem; align-items: flex-start; }
+  .legend-item:last-child { margin-bottom: 0; }
 
   .color-swatch {
-    width: 16px;
-    height: 16px;
+    width: 16px; height: 16px;
     display: inline-block;
     flex-shrink: 0;
     margin-top: 4px;
     border: 2px solid var(--color-bg);
   }
 
-  .legend-text {
-    font-size: 0.85rem;
-    line-height: 1.3;
-  }
+  .legend-text { font-size: 0.85rem; line-height: 1.3; }
+  .legend-text strong { display: block; font-size: 1rem; margin-bottom: 0.2rem; font-family: var(--font-heading); letter-spacing: 0.5px; }
+  .legend-text p { margin: 0; font-family: var(--font-body); opacity: 0.9; }
 
-  .legend-text strong {
-    display: block;
-    font-size: 1rem;
-    margin-bottom: 0.2rem;
-    font-family: var(--font-heading);
-    letter-spacing: 0.5px;
-  }
-
-  .legend-text p {
-    margin: 0;
-    font-family: var(--font-body);
-    opacity: 0.9;
-  }
-
-  .base-map-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border: none;
-    box-shadow: none;
-  }
-
-  .path-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: auto; /* Allow mouse events on SVG */
-  }
+  .base-map-img { width: 100%; height: 100%; object-fit: contain; border: none; box-shadow: none; }
+  .path-svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: auto; }
 
   .animated-path {
     stroke-dasharray: 4000;
@@ -325,16 +629,47 @@
     animation: draw 3s ease forwards;
   }
 
-  @keyframes draw {
-    to {
-      stroke-dashoffset: 0;
-    }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+
+  /* ── CONGESTION RELIEF TAB ── */
+  .congestion-layer { overflow-y: auto; background: var(--color-dark); display: flex; align-items: flex-start; }
+
+  .congestion-content {
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    color: var(--color-bg);
+    box-sizing: border-box;
   }
+
+  .congestion-intro { grid-column: 1 / -1; font-size: 0.95rem; line-height: 1.6; opacity: 0.9; }
+  .congestion-intro strong { color: var(--color-accent); }
+
+  .congestion-stats { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+
+  .c-stat { background: rgba(255,255,255,0.06); padding: 1rem; border-left: 4px solid rgba(255,255,255,0.2); }
+  .c-stat.accent { border-left-color: var(--color-accent); background: rgba(255,255,255,0.1); }
+  .c-stat-num { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 900; color: var(--color-accent); line-height: 1; margin-bottom: 0.35rem; }
+  .c-stat-label { font-size: 0.78rem; line-height: 1.4; opacity: 0.8; }
+
+  .congestion-flow { display: flex; align-items: center; gap: 0.5rem; }
+  .c-step { flex: 1; background: rgba(255,255,255,0.06); padding: 1rem; }
+  .c-step-num { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 900; color: var(--color-accent); margin-bottom: 0.4rem; }
+  .c-step p { margin: 0; font-size: 0.82rem; line-height: 1.5; opacity: 0.85; }
+  .c-arrow { font-size: 1.4rem; color: var(--color-accent); font-weight: 900; flex-shrink: 0; }
+
+  .congestion-why { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .why-item { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.82rem; line-height: 1.5; opacity: 0.9; }
+  .why-x { color: #ff6b6b; font-weight: 900; flex-shrink: 0; font-size: 1rem; }
+  .why-check { color: #69db7c; font-weight: 900; flex-shrink: 0; font-size: 1rem; }
+  .why-item p { margin: 0; }
 </style>
 
 <script>
-  // Setup Map Tabs
   const setupMap = () => {
+    // ── Tab switching ──
     const buttons = document.querySelectorAll('.map-btn');
     const layers = document.querySelectorAll('.map-layer');
 
@@ -342,36 +677,65 @@
       btn.addEventListener('click', () => {
         buttons.forEach(b => b.classList.remove('active'));
         layers.forEach(l => l.classList.remove('active'));
-
         btn.classList.add('active');
         const targetId = `map-${(btn as HTMLElement).dataset.target}`;
         document.getElementById(targetId)?.classList.add('active');
       });
     });
 
-    // Setup Hover Interaction on SVG
+    // ── SVG glow ──
     const svg = document.getElementById('spine-svg') as any;
     const glowCircle = document.getElementById('glow-circle');
-    
     if (svg && glowCircle) {
       svg.addEventListener('mousemove', (e: MouseEvent) => {
-        // Get mouse coordinates relative to SVG viewBox
         const pt = svg.createSVGPoint();
         pt.x = e.clientX;
         pt.y = e.clientY;
         const svgP = pt.matrixTransform(svg.getScreenCTM().inverse());
-        
-        // Update circle mask position
         glowCircle.setAttribute('cx', svgP.x.toString());
         glowCircle.setAttribute('cy', svgP.y.toString());
       });
-
       svg.addEventListener('mouseleave', () => {
-        // Hide glow when mouse leaves
         glowCircle.setAttribute('cx', '-1000');
         glowCircle.setAttribute('cy', '-1000');
       });
     }
+
+    // ── Simulation carousel ──
+    const slides = document.getElementById('sim-slides') as HTMLElement;
+    const dots = document.querySelectorAll('.sim-dot');
+    const prevBtn = document.getElementById('sim-prev');
+    const nextBtn = document.getElementById('sim-next');
+    const total = document.querySelectorAll('.sim-slide').length; // 4
+    let current = 0;
+
+    const goTo = (index: number) => {
+      current = (index + total) % total;
+      slides.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    };
+
+    prevBtn?.addEventListener('click', () => goTo(current - 1));
+    nextBtn?.addEventListener('click', () => goTo(current + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+    // Keyboard navigation when sim tab is active
+    document.addEventListener('keydown', (e) => {
+      const simLayer = document.getElementById('map-sim');
+      if (!simLayer?.classList.contains('active')) return;
+      if (e.key === 'ArrowRight') goTo(current + 1);
+      if (e.key === 'ArrowLeft') goTo(current - 1);
+    });
+
+    // Touch / swipe
+    let touchStartX = 0;
+    slides?.addEventListener('touchstart', (e: TouchEvent) => {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+    slides?.addEventListener('touchend', (e: TouchEvent) => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+    }, { passive: true });
   };
 
   document.addEventListener('DOMContentLoaded', setupMap);

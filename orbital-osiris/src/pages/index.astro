@@ -50,7 +50,7 @@ const SITE_DESCRIPTION = "Transforming congestion into a thriving, creative comm
 							<div class="text-content">
 								<p>Our solution is the <strong>Gowanus Art Spine</strong>, funded by a new <strong>"Congestion Relief" Pricing</strong> model—but for gentrification.</p>
 								<p>As new residents move into luxury builds, they pay a one-time fee that goes directly towards building the Art Spine. This curbs gentrification claims and funds cultural preservation.</p>
-								<p>Unlike the High Line—which led to displacement and was heavily influenced by private donors—the Art Spine is a community-prioritized pathway designed to increase foot traffic to invisible artist studios without accelerating displacement.</p>
+								<p>Unlike the High Line—which led to displacement and was heavily influenced by private donors—the Art Spine is a community-prioritized pathway designed to increase foot traffic to artist studios without accelerating displacement.</p>
 							</div>
 							<div class="image-grid">
 								<img src={`${import.meta.env.BASE_URL}/images/after-1.png`} alt="Art Spine Transformation 1" />
@@ -75,6 +75,34 @@ const SITE_DESCRIPTION = "Transforming congestion into a thriving, creative comm
 		<footer class="site-footer reveal">
 			<div class="container">
 				<p><strong>The Gowanus Art Spine</strong> &mdash; UDS26 Team 1</p>
+				
+				<div class="sources">
+				<h5 class="sources-title">Sources</h5>
+				<ol class="sources-list">
+					<li>
+					<a href="https://esd.ny.gov/gowanus" target="_blank" rel="noopener noreferrer">
+						Empire State Development (ESD) Gowanus Neighborhood Mixed-Income Housing Development Program
+					</a>
+					— Over 5,300 expected incoming units filed since the 2021 rezoning.
+					</li>
+					<li>
+					<a href="https://data.census.gov/profile/New_York,_New_York?g=160XX00US3651000" target="_blank" rel="noopener noreferrer">
+						U.S. Census Bureau — New York City Profile
+					</a>
+					— Estimates 2.3 people per household in NYC, projecting ~12,000 new renters in the area.
+					</li>
+					<li>
+					<a href="https://www.brickunderground.com/rent/gowanus-new-development-construction-rentals-condos-brooklyn-ny" target="_blank" rel="noopener noreferrer">
+						Brick Underground — "New development is rapidly transforming Gowanus" (May 2025)
+					</a>
+					— New rental buildings in Gowanus (built 2018 or later) command a 35% rent premium over older buildings, at $77.42/sq ft on average.
+					</li>
+				</ol>
+
+				<div class="fee-note">
+					<strong>Congestion Relief Fee estimate:</strong> 12,000 projected new residents × $200 one-time fee per person = <strong>~$2.4 million</strong> towards the Art Spine Fund.
+				</div>
+				</div>
 			</div>
 		</footer>
 
@@ -198,5 +226,59 @@ const SITE_DESCRIPTION = "Transforming congestion into a thriving, creative comm
 		.hero-content {
 			padding: 2rem;
 		}
+	}
+	.sources {
+		margin-top: 2rem;
+		border-top: 1px solid rgba(255,255,255,0.2);
+		padding-top: 1.5rem;
+		text-align: left;
+		max-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.sources-title {
+		font-family: var(--font-heading);
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		opacity: 0.6;
+		margin-bottom: 0.75rem;
+	}
+
+	.sources-list {
+		padding-left: 1.25rem;
+		margin: 0 0 1rem 0;
+	}
+
+	.sources-list li {
+		font-size: 0.78rem;
+		line-height: 1.6;
+		opacity: 0.75;
+		margin-bottom: 0.5rem;
+	}
+
+	.sources-list a {
+		color: var(--color-accent);
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+
+	.sources-list a:hover {
+		opacity: 1;
+		color: var(--color-secondary);
+	}
+
+	.fee-note {
+		font-size: 0.8rem;
+		line-height: 1.6;
+		opacity: 0.75;
+		background: rgba(255,255,255,0.07);
+		padding: 0.75rem 1rem;
+		border-left: 3px solid var(--color-accent);
+	}
+
+	.fee-note strong {
+		color: var(--color-accent);
 	}
 </style>
